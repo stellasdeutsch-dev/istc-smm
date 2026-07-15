@@ -122,6 +122,27 @@
   .fmt.story{background:#fff3e0;color:#b25c00}.fmt.video{background:#e0f7f5;color:#00796b}
   .fmt.post{background:var(--blue-soft);color:var(--blue)}.fmt.digest{background:#e5f4ea;color:var(--good)}
 
+  /* POST SEQUENCE (этап 1) */
+  .stage-note{font-size:14px;color:var(--ink-2);max-width:660px;margin:-6px 0 18px;line-height:1.55}
+  .seq{display:grid;grid-template-columns:1fr 1fr;gap:10px;max-width:960px}
+  @media(max-width:820px){.seq{grid-template-columns:1fr}}
+  .srow{display:flex;gap:12px;align-items:baseline;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 15px;transition:transform .35s var(--ease)}
+  .srow:hover{transform:translateX(3px)}
+  .srow .sn{flex:none;width:25px;height:25px;border-radius:50%;background:var(--blue-soft);color:var(--blue);font-weight:800;font-size:12.5px;display:grid;place-items:center;transform:translateY(4px)}
+  .srow .stag{flex:none;font-size:10.5px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;padding:3px 8px;border-radius:10px;white-space:nowrap}
+  .srow .stx{font-size:13.5px;color:var(--ink-2);line-height:1.4}
+  .t-org{background:var(--blue-soft);color:var(--blue)}
+  .t-news{background:#e5f4ea;color:var(--good)}
+  .t-reach{background:#fdeef5;color:#c2185b}
+  .srow.is-news{background:#f4fbf6;border-color:#d3ecdc}
+  /* cycle diagram (этап 2) */
+  .cycle{display:flex;align-items:stretch;gap:10px;flex-wrap:wrap;margin-top:6px}
+  .cnode{flex:1;min-width:200px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px;position:relative}
+  .cnode .ct{font-size:11px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;margin-bottom:6px;display:inline-block;padding:3px 9px;border-radius:10px}
+  .cnode p{font-size:13.5px;color:var(--ink-2);line-height:1.45}
+  .carrow{align-self:center;font-size:20px;color:var(--ink-3);flex:none}
+  @media(max-width:820px){.carrow{transform:rotate(90deg);width:100%;text-align:center}}
+
   /* POST MOCKUPS */
   .mocks{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:38px}
   @media(max-width:900px){.mocks{grid-template-columns:1fr 1fr}}
@@ -300,32 +321,34 @@
 <section class="block alt" id="instagram">
   <div class="wrap">
     <div class="pl-head reveal"><span class="pl-badge" style="background:linear-gradient(45deg,var(--ig1),var(--ig2),var(--ig3))">Ig</span><span class="pl-title">Instagram: запуск с нуля</span></div>
-    <p class="pl-sub reveal">Зачем: здесь живёт молодая научная аудитория региона — та самая, которую ISTC зовёт в базу экспертов и на гранты. Формула: 3 поста в неделю + сторис. Ничего сверх того, что уже есть в архивах организации.</p>
+    <p class="pl-sub reveal">Зачем: здесь живёт молодая научная аудитория региона — та самая, которую ISTC зовёт в базу экспертов и на гранты. Аккаунт стартует с нуля, поэтому сначала — фундамент: первые 12 постов рассказывают, кто мы. Новости выходят между ними в обычном режиме, без изменений.</p>
 
     <div class="plan-wrap reveal">
-      <div class="plan-label">Контент-план · первые 4 недели</div>
-      <div class="weeks">
-        <div class="week"><div class="wt" style="color:var(--ig2)">Неделя 1 · знакомство</div>
-          <div class="wrow"><span class="day">Пн</span><span class="fmt car">карусель</span><span class="txt">«Что такое ISTC за 7 слайдов» — 34 года, 10 стран, простыми словами</span></div>
-          <div class="wrow"><span class="day">Ср</span><span class="fmt reel">reels</span><span class="txt">Нарезка лучшего интервью из готовой библиотеки, 45 сек, субтитры</span></div>
-          <div class="wrow"><span class="day">Пт</span><span class="fmt post">пост</span><span class="txt">«Человек науки»: портрет учёного из проекта + 3 факта о его работе</span></div>
-        </div>
-        <div class="week"><div class="wt" style="color:var(--ig2)">Неделя 2 · проекты</div>
-          <div class="wrow"><span class="day">Пн</span><span class="fmt car">карусель</span><span class="txt">«Город остался без чистой воды. Вот как это чинят» — проект в Истиклоле</span></div>
-          <div class="wrow"><span class="day">Ср</span><span class="fmt reel">reels</span><span class="txt">60 сек: как выглядят полевые учения CBRN — из архивных съёмок</span></div>
-          <div class="wrow"><span class="day">Пт</span><span class="fmt story">сторис</span><span class="txt">Серия: «5 фактов об ISTC, которые звучат как выдумка» + опрос</span></div>
-        </div>
-        <div class="week"><div class="wt" style="color:var(--ig2)">Неделя 3 · возможности</div>
-          <div class="wrow"><span class="day">Пн</span><span class="fmt car">карусель</span><span class="txt">«Как получить грант на исследование: 4 шага» — по японскому конкурсу</span></div>
-          <div class="wrow"><span class="day">Ср</span><span class="fmt reel">reels</span><span class="txt">«Зелёный водород из солнца и воды» — проект в Таджикистане за 45 сек</span></div>
-          <div class="wrow"><span class="day">Пт</span><span class="fmt post">пост</span><span class="txt">Женщины в науке региона: серия портретов, тег институтов</span></div>
-        </div>
-        <div class="week"><div class="wt" style="color:var(--ig2)">Неделя 4 · итоги + люди</div>
-          <div class="wrow"><span class="day">Пн</span><span class="fmt car">карусель</span><span class="txt">«ISTC в цифрах за месяц»: проекты, страны, события — инфографика</span></div>
-          <div class="wrow"><span class="day">Ср</span><span class="fmt reel">reels</span><span class="txt">Экспо-2025 в Осаке: как это было — итоговая нарезка из серии</span></div>
-          <div class="wrow"><span class="day">Пт</span><span class="fmt story">сторис</span><span class="txt">Q&amp;A: «Спросите учёного» — вопросы из директа, ответы эксперта</span></div>
-        </div>
+      <div class="plan-label" style="color:var(--ig2)">Этап 1 · первые 12 постов — «кто мы»</div>
+      <div class="seq">
+        <div class="srow"><span class="sn">1</span><span class="stag t-org">орг</span><span class="stx">Карусель «Что такое ISTC за 7 слайдов» — 34 года, 10 стран, простыми словами</span></div>
+        <div class="srow"><span class="sn">2</span><span class="stag t-org">орг</span><span class="stx">История: 1992 → Астана. Как десять стран сели за один стол</span></div>
+        <div class="srow"><span class="sn">3</span><span class="stag t-org">орг</span><span class="stx">Reels: чем живёт центр — нарезка из готовых съёмок, 45 сек</span></div>
+        <div class="srow is-news"><span class="sn">4</span><span class="stag t-news">новость</span><span class="stx">Текущая новость ISTC — в обычном формате, без изменений</span></div>
+        <div class="srow"><span class="sn">5</span><span class="stag t-org">орг</span><span class="stx">«10 стран за одним столом» — кто участники и зачем они вместе</span></div>
+        <div class="srow"><span class="sn">6</span><span class="stag t-org">орг</span><span class="stx">Карусель «Как устроен грант: от заявки до проекта» — 4 шага</span></div>
+        <div class="srow"><span class="sn">7</span><span class="stag t-org">орг</span><span class="stx">«Человек науки»: портрет учёного из проекта + 3 факта о его работе</span></div>
+        <div class="srow is-news"><span class="sn">8</span><span class="stag t-news">новость</span><span class="stx">Новость недели — в обычном формате</span></div>
+        <div class="srow"><span class="sn">9</span><span class="stag t-org">орг</span><span class="stx">Reels: интервью с CBRN-экспертом — нарезка из готовой библиотеки</span></div>
+        <div class="srow"><span class="sn">10</span><span class="stag t-org">орг</span><span class="stx">Проект в фокусе: «Город остался без чистой воды. Вот как это чинят»</span></div>
+        <div class="srow"><span class="sn">11</span><span class="stag t-org">орг</span><span class="stx">Штаб-квартира в Астане и 4 филиала — где нас искать</span></div>
+        <div class="srow"><span class="sn">12</span><span class="stag t-org">орг</span><span class="stx">Экспо-2025 в Осаке: как это было — итоговая нарезка</span></div>
       </div>
+
+      <div class="plan-label" style="margin-top:30px;color:var(--ig2)">Этап 2 · дальше — постоянный цикл</div>
+      <div class="cycle">
+        <div class="cnode"><span class="ct t-org">1 · про организацию</span><p>Интервью с экспертом, проект в фокусе, человек науки, закулисье событий</p></div>
+        <span class="carrow">→</span>
+        <div class="cnode"><span class="ct t-news">2 · новость</span><p>Текущие новости ISTC — в обычном формате, как выходят на сайте</p></div>
+        <span class="carrow">→</span>
+        <div class="cnode"><span class="ct t-reach">3 · для охватов</span><p>«Объясняю сложное просто»: хук-карусели и reels, которые репостят за пределы подписчиков</p></div>
+      </div>
+      <p class="stage-note" style="margin-top:14px">Плюс сторис ежедневно: анонсы, опросы, дедлайны, Q&amp;A «спросите учёного».</p>
     </div>
 
     <div class="mocks">
@@ -364,27 +387,32 @@
 <section class="block" id="tiktok">
   <div class="wrap">
     <div class="pl-head reveal"><span class="pl-badge" style="background:#000;box-shadow:0 12px 28px -12px rgba(0,0,0,.5)">tt</span><span class="pl-title">TikTok: наука за 45 секунд</span></div>
-    <p class="pl-sub reveal">Сразу честно: никаких танцев. Формат — «объясняю сложное просто»: биобезопасность, вода, нераспространение. Я делал так для своих 110 000 подписчиков — работает, если в первые 3 секунды есть вопрос, на который хочется узнать ответ. Ритм: 2–3 видео в неделю, всё — нарезки и переозвучка уже снятого.</p>
+    <p class="pl-sub reveal">Сразу честно: никаких танцев. Формат — «объясняю сложное просто». Я делал так для своих 110 000 подписчиков — работает, если в первые 3 секунды есть вопрос, на который хочется узнать ответ. Аккаунт с нуля — значит, сначала первые 9–12 видео рассказывают про организацию (новости — между ними, как обычно), потом включается цикл.</p>
 
     <div class="plan-wrap reveal">
-      <div class="plan-label">Контент-план · первые 4 недели</div>
-      <div class="weeks">
-        <div class="week"><div class="wt">Неделя 1</div>
-          <div class="wrow"><span class="day">Вт</span><span class="fmt video">видео</span><span class="txt">«Почему тысячи учёных в 1992-м не продали свои знания» — история ISTC</span></div>
-          <div class="wrow"><span class="day">Пт</span><span class="fmt video">видео</span><span class="txt">«Что такое биобезопасность? Объясняю на примере одной лаборатории»</span></div>
-        </div>
-        <div class="week"><div class="wt">Неделя 2</div>
-          <div class="wrow"><span class="day">Вт</span><span class="fmt video">видео</span><span class="txt">«Как остановить эпидемию до того, как она началась» — CBRN-готовность</span></div>
-          <div class="wrow"><span class="day">Пт</span><span class="fmt video">видео</span><span class="txt">«Вода в Центральной Азии заканчивается? Разбираю на цифрах»</span></div>
-        </div>
-        <div class="week"><div class="wt">Неделя 3</div>
-          <div class="wrow"><span class="day">Вт</span><span class="fmt video">видео</span><span class="txt">«Кто такой научный дипломат и почему это профессия будущего»</span></div>
-          <div class="wrow"><span class="day">Пт</span><span class="fmt video">видео</span><span class="txt">«Топливо из солнца и воды — уже делают в Таджикистане. Вот как»</span></div>
-        </div>
-        <div class="week"><div class="wt">Неделя 4</div>
-          <div class="wrow"><span class="day">Вт</span><span class="fmt video">видео</span><span class="txt">«Как студенту попасть в международный научный проект» — гайд</span></div>
-          <div class="wrow"><span class="day">Пт</span><span class="fmt video">видео</span><span class="txt">«5 профессий в науке, о которых вы не слышали» — с примерами ISTC</span></div>
-        </div>
+      <div class="plan-label">Этап 1 · первые 12 видео — «кто мы»</div>
+      <div class="seq">
+        <div class="srow"><span class="sn">1</span><span class="stag t-org">орг</span><span class="stx">«В 1992-м тысячи учёных-оружейников остались без работы…» — история создания</span></div>
+        <div class="srow"><span class="sn">2</span><span class="stag t-org">орг</span><span class="stx">«Чем занимается ISTC» — за 45 секунд, без канцелярита</span></div>
+        <div class="srow"><span class="sn">3</span><span class="stag t-org">орг</span><span class="stx">«10 стран. Один стол. 34 года.» — кто участники</span></div>
+        <div class="srow is-news"><span class="sn">4</span><span class="stag t-news">новость</span><span class="stx">Новость ISTC — коротко, с титрами, как есть</span></div>
+        <div class="srow"><span class="sn">5</span><span class="stag t-org">орг</span><span class="stx">«Как выглядят полевые учения CBRN» — архивные кадры + закадр</span></div>
+        <div class="srow"><span class="sn">6</span><span class="stag t-org">орг</span><span class="stx">«Кто такой научный дипломат» — профессия, о которой не рассказывают в школе</span></div>
+        <div class="srow"><span class="sn">7</span><span class="stag t-org">орг</span><span class="stx">Интервью с экспертом — нарезка 45 сек из готовой библиотеки</span></div>
+        <div class="srow is-news"><span class="sn">8</span><span class="stag t-news">новость</span><span class="stx">Новость недели — как есть</span></div>
+        <div class="srow"><span class="sn">9</span><span class="stag t-org">орг</span><span class="stx">«Как студенту попасть в международный проект» — через программы ISTC</span></div>
+        <div class="srow"><span class="sn">10</span><span class="stag t-org">орг</span><span class="stx">Проект: «Топливо из солнца и воды — уже делают в Таджикистане»</span></div>
+        <div class="srow"><span class="sn">11</span><span class="stag t-org">орг</span><span class="stx">«Самая безопасная лаборатория города» — как устроена биобезопасность</span></div>
+        <div class="srow"><span class="sn">12</span><span class="stag t-org">орг</span><span class="stx">Экспо-2025 в Осаке — итоги за 60 секунд</span></div>
+      </div>
+
+      <div class="plan-label" style="margin-top:30px">Этап 2 · дальше — постоянный цикл</div>
+      <div class="cycle">
+        <div class="cnode"><span class="ct t-org">1 · про организацию</span><p>Интервью с экспертами, проекты, люди, «один день из жизни» центра</p></div>
+        <span class="carrow">→</span>
+        <div class="cnode"><span class="ct t-news">2 · новость</span><p>Короткие видео-новости ISTC с титрами — без изменения формата</p></div>
+        <span class="carrow">→</span>
+        <div class="cnode"><span class="ct t-reach">3 · для охватов</span><p>«Наука за 45 секунд»: вода, эпидемии, реакторы — хуки, которые выносит в рекомендации</p></div>
       </div>
     </div>
 
@@ -426,20 +454,22 @@
 <section class="block alt" id="telegram">
   <div class="wrap">
     <div class="pl-head reveal"><span class="pl-badge" style="background:var(--tg)">✈</span><span class="pl-title">Telegram: канал пользы</span></div>
-    <p class="pl-sub reveal">Дефолтный мессенджер региона. Здесь не нужен сторителлинг — нужна польза, за которую подписываются: гранты, дедлайны, вакансии, события. Двуязычно: RU + EN. Я веду свой канал на 9 800 подписчиков — знаю, что удерживает людей: регулярность и ноль воды.</p>
+    <p class="pl-sub reveal">Дефолтный мессенджер региона. Здесь не нужен сторителлинг — нужна польза, за которую подписываются и которую пересылают: <b>гайды и полезные материалы плюс новости</b>. Двуязычно: RU + EN. Я веду свой канал на 9 800 подписчиков — знаю, что удерживает людей: регулярность и ноль воды.</p>
 
     <div class="plan-wrap reveal">
-      <div class="plan-label">Рубрики · недельный ритм</div>
+      <div class="plan-label" style="color:var(--tg)">Недельный ритм · гайды + новости</div>
       <div class="weeks">
         <div class="week"><div class="wt" style="color:var(--tg)">Постоянные рубрики</div>
-          <div class="wrow"><span class="day">Пн</span><span class="fmt digest">дайджест</span><span class="txt">«Неделя в науке региона»: 5 новостей по делу, каждая — в 2 строки</span></div>
-          <div class="wrow"><span class="day">Ср</span><span class="fmt post">гранты</span><span class="txt">Открытые конкурсы и дедлайны: кто может подать, сколько дней осталось</span></div>
-          <div class="wrow"><span class="day">Пт</span><span class="fmt post">польза</span><span class="txt">Вакансии, стажировки, вебинары ISTC и партнёров</span></div>
+          <div class="wrow"><span class="day">Пн</span><span class="fmt digest">новости</span><span class="txt">Дайджест: новости ISTC и науки региона — 5 пунктов, каждый в 2 строки</span></div>
+          <div class="wrow"><span class="day">Ср</span><span class="fmt post">гайд</span><span class="txt">Полезный материал недели: пошагово, с чек-листом — то, что сохраняют и пересылают</span></div>
+          <div class="wrow"><span class="day">Пт</span><span class="fmt post">польза</span><span class="txt">Гранты, дедлайны, вакансии, стажировки, вебинары ISTC и партнёров</span></div>
+          <div class="wrow"><span class="day">⏰</span><span class="fmt story">отсчёт</span><span class="txt">Ситуативно: «до дедлайна 7 дней», live-апдейты с событий</span></div>
         </div>
-        <div class="week"><div class="wt" style="color:var(--tg)">Ситуативные форматы</div>
-          <div class="wrow"><span class="day">⏰</span><span class="fmt story">отсчёт</span><span class="txt">«До дедлайна 7 дней» — напоминания по активным коллам</span></div>
-          <div class="wrow"><span class="day">📊</span><span class="fmt car">цифра</span><span class="txt">«Цифра недели» — один факт из отчётов ISTC + короткий контекст</span></div>
-          <div class="wrow"><span class="day">🔴</span><span class="fmt video">live</span><span class="txt">Короткие апдейты с событий: сессия Совета, семинары, учения</span></div>
+        <div class="week"><div class="wt" style="color:var(--tg)">Первые гайды — очередь на месяц</div>
+          <div class="wrow"><span class="day">01</span><span class="fmt post">гайд</span><span class="txt">«Как подать заявку на грант ISTC: пошагово» — по японскому коллу</span></div>
+          <div class="wrow"><span class="day">02</span><span class="fmt post">гайд</span><span class="txt">«Research proposal, который не отклонят: чек-лист из 10 пунктов»</span></div>
+          <div class="wrow"><span class="day">03</span><span class="fmt post">гайд</span><span class="txt">«Стажировки и программы для молодых учёных региона — куда подаваться осенью»</span></div>
+          <div class="wrow"><span class="day">04</span><span class="fmt post">гайд</span><span class="txt">«Как попасть в базу экспертов ISTC и что это даёт» — с инструкцией</span></div>
         </div>
       </div>
     </div>
@@ -472,14 +502,17 @@
         <div class="mf"><span>👁 просмотры</span><span>↗ переслать</span></div>
       </div>
       <div class="mock reveal d3"><div class="platform-strip ps-tg"></div>
-        <div class="mh"><span class="ava"><img src="istc-mark.png" alt="ISTC" /></span><div class="who"><b>ISTC | наука и гранты</b><span>Пост · цифра недели</span></div></div>
-        <div class="mb"><b>📊 Цифра недели: 60.</b>
+        <div class="mh"><span class="ava"><img src="istc-mark.png" alt="ISTC" /></span><div class="who"><b>ISTC | наука и гранты</b><span>Пост · гайд недели</span></div></div>
+        <div class="mb"><b>📚 Гайд: как подать заявку на грант ISTC.</b>
 
-Столько стран дали своих учёных проектам ISTC за 34 года.
+Пошагово, без канцелярита:
 
-Для сравнения: в ООН — 193 государства. То есть каждая третья страна мира хотя бы раз делала науку вместе с ISTC.
+1. Проверьте, подходите ли вы: учёный из страны-участницы
+2. Соберите команду — международные партнёры приветствуются
+3. Концепция на 2 страницы: проблема → решение → результат
+4. Полная заявка — до 20 августа
 
-Неплохо для организации, о которой вы, возможно, услышали только что.</div>
+Чек-лист документов — в PDF ниже. Сохраняйте и пересылайте коллегам ↓</div>
         <div class="mf"><span>👁 просмотры</span><span>↗ переслать</span></div>
       </div>
     </div>
